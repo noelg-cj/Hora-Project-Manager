@@ -21,25 +21,25 @@
               <li class="list">
                 <a href="" class="nav-link">
                   <i class="fa-solid fa-house"></i>
-                  <span class="link">Dashboard</span>
+                  <!-- <span class="link">Dashboard</span> -->
                 </a>
               </li>
               <li class="list">
                 <a href="" class="nav-link">
                   <i class="fa-solid fa-check"></i>
-                  <span class="link">Tasks</span>
+                  <!-- <span class="link">Tasks</span> -->
                 </a>
               </li>
               <li class="list">
                 <a href="" class="nav-link">
                   <i class="fa-solid fa-calendar"></i>
-                  <span class="link">Calendar</span>
+                  <!-- <span class="link">Calendar</span> -->
                 </a>
               </li>
               <li class="list">
                 <a href="" class="nav-link">
                   <i class="fa-solid fa-map"></i>
-                  <span class="link">Projects</span>
+                  <!-- <span class="link">Projects</span> -->
                 </a>
               </li>
             </ul>
@@ -49,21 +49,69 @@
               <div class="profile-pic" id="profile-img">
                 <!-- <img src="../assets/scrappy.png" alt=""> -->
               </div>
-              <div class="user-details">
+<!--               <div class="user-details">
                 <div class="username">
                   Noel George
                 </div>
                 <div class="gmail">
                   noelgeorge2004@gmail.com
                 </div>
-            </div>
+            </div> -->
             </div>
           </div>
         </div>
       </nav>
 
 
-      <main></main>
+      <main>
+        <div class="project-name">Project</div>
+        <section class="project-options">
+          <ul class="options">
+            <li class="details">
+              <a href="" class="option-list">Details</a>
+            </li>
+            <li class="details">
+              <a href="" class="option-list active">Tasks</a>
+            </li>
+            <li class="details">
+              <a href="" class="option-list">Roadmaps</a>
+            </li>
+            <li class="details">
+              <a href="" class="option-list">Settings</a>
+            </li>
+          </ul>
+        </section>
+        <section class="task-container">
+          
+          <section class="to-do">
+            <div class="title">To-Do</div>
+            <div class="add-task">
+              <p>+ Add New Task</p>
+            </div>
+            <div class="task" id="task">
+              <div class="tag-container">
+                UI Design
+              </div>
+              <div class="task-name">Finish creating UI for kanban board</div>
+              <div class="description">Add draggable feature to the board and give proper styling</div>
+            </div>
+          </section>
+
+          <section class="in-progress">
+            <div class="title">In-Progress</div>
+            <div class="add-task">
+              <p>+ Add New Task</p>
+            </div>
+          </section>
+
+          <section class="completed">
+            <div class="title">Completed</div>
+            <div class="add-task">
+              <button id="add-task">+ Add New Task</button>
+            </div>
+          </section>
+        </section>
+      </main>
       <aside></aside>
     </div>
 
