@@ -44,9 +44,9 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    box-shadow: 2px 0px 10px rgba(120, 120, 120, 0.5);
+/*     border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px; */
+/*     box-shadow: 2px 0px 10px rgba(120, 120, 120, 0.5); */
 }
 
 .logo {
@@ -204,11 +204,53 @@ main {
     border-bottom: 3px solid var(--primary);
 }
 
+.sort-and-filter {
+    padding: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+}
+
+.sort p {
+    color: var(--light-text)
+}
+
+.sort button, .filter button {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    padding: 10px;
+    font-size: 1rem;
+    gap: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+.sort button:hover i, .filter:hover button p + i {
+    transform: translateY(2px);
+}
+
+.sort button i, .filter button i {
+    font-size: 0.75rem;
+    transition: 0.2s;
+}
+
+.sort button:hover, .filter button:hover {
+    cursor: pointer;
+}
+
 .kanban-board {
     background-color: #f2f2f2;
+}
+
+.kanban-board .kanban-container {
     height: 100%;
     display: flex;
-    padding: 30px;
+    padding: 0px 30px;
     gap: 10px;
 }
 
@@ -218,8 +260,19 @@ main {
 }
 
 .title {
+    height: 40px;
     font-weight: 500;
     border-bottom: 2px solid #dadada;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title .title-count {
+    background-color: var(--primary);
+    color: white;
+    padding: 0px 20px;
+    border-radius: 10px;
 }
 
 .add-task button {
@@ -274,6 +327,13 @@ main {
 .description {
     font-size: 0.75rem;
     color: #4f4f4f;
+}
+
+.due-date {
+    font-size: 0.7rem;
+    color: #828282;
+    margin-top: 15px;
+
 }
 
 /* 

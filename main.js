@@ -10,10 +10,10 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1920 / factor,
     height: 1080 / factor,
-/*     webPreferences: {
-      zoomFactor: 1.0 / factor
+    webPreferences: {
+      zoomFactor: 0.8
     }
- */
+
   })
   mainWindow.maximize();
   mainWindow.hide();

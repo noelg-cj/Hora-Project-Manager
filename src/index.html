@@ -83,32 +83,60 @@
         </section>
 
         <section class="kanban-board">
-          <section class="to-do">
-            <div class="title">TO DO</div>
-            <div class="add-task">
-              <button id="add-task">+ Add New Task</button>
+          <section class="sort-and-filter">
+            <div class="sort">
+              <p>Sort by:</p>
+              <button class="sort-options">
+                Deadline
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
             </div>
-            <div class="task" id="task">
-              <div class="tag-container">
-                <div id="tag">UI Design</div>
+            <div class="filter">
+              <button class="filter-button">
+                <i class="fa-solid fa-arrow-down-short-wide"></i>
+                <p>Filter</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </section>
+          <section class="kanban-container">
+            <section class="to-do">
+              <div class="title">
+                <div class="title-name">TO DO</div>
+                <div class="title-count">1</div>
               </div>
-              <div class="task-name">Finish creating UI for kanban board</div>
-              <div class="description">Add draggable feature to the board and give proper styling</div>
-            </div>
-          </section>
+              <div class="add-task">
+                <button id="add-task">+ Add New Task</button>
+              </div>
+              <div class="task" id="task">
+                <div class="tag-container">
+                  <div id="tag">UI Design</div>
+                </div>
+                <div class="task-name">Finish creating UI for kanban board</div>
+                <div class="description">Add draggable feature to the board and give proper styling</div>
+                <div class="due-date">Due <span class="date">21/01/2023</span></div>
+              </div>
+            </section>
 
-          <section class="in-progress">
-            <div class="title">IN PROGRESS</div>
-            <div class="add-task">
-              <button id="add-task">+ Add New Task</button>
-            </div>
-          </section>
+            <section class="in-progress">
+              <div class="title">
+                <div class="title-name">IN PROGRESS</div>
+                <div class="title-count">0</div>
+              </div>
+              <div class="add-task">
+                <button id="add-task">+ Add New Task</button>
+              </div>
+            </section>
 
-          <section class="completed">
-            <div class="title">COMPLETED</div>
-            <div class="add-task">
-              <button id="add-task">+ Add New Task</button>
-            </div>
+            <section class="completed">
+              <div class="title">
+                <div class="title-name">COMPLETED</div>
+                <div class="title-count">0</div>
+              </div>
+              <div class="add-task">
+                <button id="add-task">+ Add New Task</button>
+              </div>
+            </section>
           </section>
         </section>
       </main>
