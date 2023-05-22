@@ -100,13 +100,13 @@
             </div>
           </section>
           <section class="kanban-container">
-            <section class="to-do">
+            <section class="to-do" id="to-do">
               <div class="title">
                 <div class="title-name">TO DO</div>
                 <div class="title-count">1</div>
               </div>
               <div class="add-task">
-                <button data-modal-target="#modal" class="add-task" id="todo-add">+ Add New Task</button>
+                <button data-modal-target="#modal" class="add-task todo" id="todo-add">+ Add New Task</button>
               </div>
               <div class="task" id="task">
                 <div class="tag-container">
@@ -118,35 +118,35 @@
               </div>
             </section>
 
-            <section class="in-progress">
+            <section class="in-progress" id="in-progress">
               <div class="title">
                 <div class="title-name">IN PROGRESS</div>
                 <div class="title-count">0</div>
               </div>
               <div class="add-task">
-                <button data-modal-target="#modal" class="add-task" id="progress-add">+ Add New Task</button>
+                <button data-modal-target="#modal" class="add-task progress" id="progress-add">+ Add New Task</button>
               </div>
             </section>
 
-            <section class="completed">
+            <section class="completed" id="completed">
               <div class="title">
                 <div class="title-name">COMPLETED</div>
                 <div class="title-count">0</div>
               </div>
               <div class="add-task">
-                <button data-modal-target="#modal" class="add-task" id="completed-add">+ Add New Task</button>
+                <button data-modal-target="#modal" class="add-task completed" id="completed-add">+ Add New Task</button>
               </div>
             </section>
           </section>
         </section>
       </main>
       <div class="form-container">
-        <aside>
+        <aside class="active">
             <button class="close-button" id="form-close-button">
               <i class="fa-solid fa-xmark"></i>
             </button>
             <h3 class="add-task-title">Add Task</h3>
-            <form action="get">
+            <form action="get" id="task-form">
               <div class="task-params">
                 <div class="task-name-input param">
                   <label for="task-name-input">Task:</label>
@@ -158,7 +158,7 @@
                 </div>
               </div>
               <div class="submit-button">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="submit">
               </div> 
             </form>
         </aside>
