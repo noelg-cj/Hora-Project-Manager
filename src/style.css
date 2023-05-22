@@ -336,8 +336,112 @@ main {
 
 }
 
-/* 
+
+/* Add task sidebar */
 aside {
-    background-color: #3BB8A9;
-    width: 25%;
-} */
+/*     transform: scale(0); */
+    z-index: 4;
+    position: fixed;
+    right: -40%;
+    bottom: 0;
+    top: 0;
+    padding: 40px;
+    background-color: var(--bg-color);
+
+    width: 40%;
+
+    transition: 0.25s ease-in-out;
+}
+
+aside.active {
+    right: 0;
+    box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+#form-close-button {
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: var(--light-text-hover);
+    display: flex;
+    justify-content: right;
+}
+
+#form-close-button:hover {
+    cursor: pointer;
+    color: black
+}
+
+.form-container {
+    background-color: var(--bg-color);
+}
+
+.add-task-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.task-params {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.task-params .param {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-params .param label {
+    color: var(--light-text-hover)
+}
+
+.task-params .param input {
+    height: 30px;
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--light-text)
+}
+
+.task-params .param input:focus {
+    outline: none;
+}
+
+form .submit-button input {
+    margin: 20px 0px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--primary);
+    border-radius: 5px;
+    color: white;
+}
+
+form .submit-button input:hover {
+    cursor: pointer;
+    background-color: #e89e14;
+}
+
+.overlay {
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.25s ease-in-out;
+}
+
+.overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}

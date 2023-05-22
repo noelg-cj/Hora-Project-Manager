@@ -106,7 +106,7 @@
                 <div class="title-count">1</div>
               </div>
               <div class="add-task">
-                <button id="add-task">+ Add New Task</button>
+                <button data-modal-target="#modal" class="add-task" id="todo-add">+ Add New Task</button>
               </div>
               <div class="task" id="task">
                 <div class="tag-container">
@@ -124,7 +124,7 @@
                 <div class="title-count">0</div>
               </div>
               <div class="add-task">
-                <button id="add-task">+ Add New Task</button>
+                <button data-modal-target="#modal" class="add-task" id="progress-add">+ Add New Task</button>
               </div>
             </section>
 
@@ -134,15 +134,40 @@
                 <div class="title-count">0</div>
               </div>
               <div class="add-task">
-                <button id="add-task">+ Add New Task</button>
+                <button data-modal-target="#modal" class="add-task" id="completed-add">+ Add New Task</button>
               </div>
             </section>
           </section>
         </section>
       </main>
-      <aside></aside>
+      <div class="form-container">
+        <aside>
+            <button class="close-button" id="form-close-button">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="add-task-title">Add Task</h3>
+            <form action="get">
+              <div class="task-params">
+                <div class="task-name-input param">
+                  <label for="task-name-input">Task:</label>
+                  <input type="text" name="task-name" id="task-name-input">
+                </div>
+                <div class="task-desc-input param">
+                  <label for="task-desc-input">Description:</label>
+                  <input type="text" name="task-desc" id="task-desc-input">
+                </div>
+              </div>
+              <div class="submit-button">
+                <input type="submit" value="Submit">
+              </div> 
+            </form>
+        </aside>
+        <div class="overlay"></div>
+      </div>
     </div>
 
-    <!-- <script src="index.js"></script> -->
+
+
+    <script src="index.js"></script>
   </body>
 </html>
