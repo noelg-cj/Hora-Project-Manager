@@ -10,6 +10,13 @@ let todo = document.getElementById("to-do");
 let progress = document.getElementById("in-progress");
 let completed = document.getElementById("completed");
 
+let counter = null;
+let count = null;
+
+let todoCounter = 0;
+let progressCounter = 0;
+let completedCounter = 0;
+
 let activeTaskArea = todo;
 
 addTask.forEach(taskButton => {
@@ -19,15 +26,26 @@ addTask.forEach(taskButton => {
 
         if (taskButton.classList.contains("todo")) {
             activeTaskArea = todo;
+            todoCounter++;
+            counter = document.querySelector(".to-do .title .title-count");
+            count = todoCounter;
         }
 
         else if (taskButton.classList.contains("progress")) {
             activeTaskArea = progress;
+            progressCounter++;
+            counter = document.querySelector(".in-progress .title .title-count");
+            count = progressCounter;
         }
 
         else if (taskButton.classList.contains("completed")) {
+            counter = document.querySelector(".completed .title .title-count")
             activeTaskArea = completed;
+            completedCounter++;
+            count = completedCounter;
         }
+
+        console.log(count, counter);
     })
 })
 
@@ -45,8 +63,6 @@ taskForm.addEventListener("submit", (e) => {
     let task = document.createElement("div");
     task.classList.add("task");
 
-    console.log(taskName, taskDescr);
-    
     let taskNameContainer = document.createElement("div");
     taskNameContainer.classList.add("task-name");
     taskNameContainer.innerText = taskName.value;
@@ -58,7 +74,10 @@ taskForm.addEventListener("submit", (e) => {
     task.appendChild(taskNameContainer);
     task.appendChild(taskDescrContainer);
 
+    console.log(counter, count);
+
     activeTaskArea.appendChild(task);
+    counter.innerText = count;
 
     /* Remove form after submitting */
     taskName.value = "";
