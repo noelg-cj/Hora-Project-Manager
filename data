@@ -1,0 +1,16 @@
+[
+    {
+        "id" : 1,
+        "name": "Project Manager",
+        "date": "23-05-2023",
+        "tags": "ui",
+        "tasks": []
+    },
+    {
+        "id": 2,
+        "name": "Project 2",
+        "date": "10-06-2023",
+        "tags": "c++",
+        "tasks": []
+    }
+]

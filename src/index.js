@@ -1,3 +1,8 @@
+/* API */
+var Kanban = require("./API/KanbanAPI.js");
+Kanban.init();
+
+
 /* Add task buttons */
 const addTask = document.querySelectorAll('[data-modal-target]');
 let taskFormContainer = document.querySelector('aside')
@@ -60,6 +65,14 @@ taskForm.addEventListener("submit", (e) => {
     let taskName = document.getElementById("task-name-input");
     let taskDescr = document.getElementById("task-desc-input");
 
+    if (taskName.value === "") {
+        taskName.value = "";
+        taskDescr.value = "";
+        taskFormContainer.classList.remove('active');
+        overlay.classList.remove('active');
+        return;
+    }
+
     let task = document.createElement("div");
     task.classList.add("task");
 
@@ -73,8 +86,6 @@ taskForm.addEventListener("submit", (e) => {
 
     task.appendChild(taskNameContainer);
     task.appendChild(taskDescrContainer);
-
-    console.log(counter, count);
 
     activeTaskArea.appendChild(task);
     counter.innerText = count;

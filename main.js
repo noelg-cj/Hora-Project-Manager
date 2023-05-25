@@ -10,7 +10,10 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1920 / factor,
     height: 1080 / factor,
+    /* Temporary, make better solution later */
     webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
       zoomFactor: 0.8
     }
 
