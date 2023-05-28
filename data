@@ -4,7 +4,16 @@
         "name": "Project Manager",
         "date": "23-05-2023",
         "tags": "ui",
-        "tasks": []
+        "tasks": [
+            {
+                "id" : 1,
+                "status": 0,
+                "tags": "ui",
+                "name": "New Task",
+                "description": "Created a new task.",
+                "date": "26-05-2023"
+            }
+        ]
     },
     {
         "id": 2,

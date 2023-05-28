@@ -1,21 +1,6 @@
 const {readFile, writeFileSync} = require('fs');
 
 /* export default class Kanban {
-    static getProjectList() {
-        const projects = [];
-
-        const data = read();
-        console.log(data);
-        data.forEach(project => {
-            projects.push(project.name);
-        });
-
-        if (!projects) {
-            return [];
-        }
-
-        return projects;
-    }
 
     static getProject(id) {
         const project = read().find(project => project.id === id);
@@ -25,13 +10,6 @@ const {readFile, writeFileSync} = require('fs');
         }
 
         return project;
-    }
-
-    static addTask(projectId, task) {
-        const data = read()
-        const project = data.find(project => project.id === projectId)
-        project.tasks.push(task);
-        commit(data);
     }
 } */
 
@@ -50,6 +28,64 @@ function init() {
         content = JSON.parse(result);
         save(content);
     })
+}
+
+function getProjectList() {
+    const data = read();
+    let projectList = [];
+
+    data.forEach(project => {
+        projectList.push(project.name)
+    });
+
+    return projectList;
+}
+
+function getTaskList(projectID) {
+    const data = read();
+    let taskList = [];
+    let project = data.find(project => project.id = projectID);
+
+    if (project) {
+        taskList = project.tasks;
+    }
+
+    return taskList;
+}
+
+function addTask(projectID, taskStatus, taskName, taskDescription, taskDate) {
+    let data = read();
+    const taskID = Math.floor(Math.random() * 100000);
+    const project = data.find(project => project = project.id);
+
+    // Checking if id is already assigned to a task
+    project.tasks.forEach(task => {
+        if (task.id == taskID) {
+            taskID = Math.floor(Math.random() * 100000);
+        }
+    })
+
+    const task = {
+        id: taskID,
+        status: taskStatus,
+        name: taskName,
+        description: taskDescription,
+        date: taskDate
+    }
+
+    project.tasks.push(task);
+    save(data);
+    
+    return task;
+}
+
+function deleteTask(projectID, taskID) {
+    const data = read();
+    const project = data.find(project => projectID = project.id) ;
+    const task = project.tasks.find(task => task.id = taskID);
+
+    project.tasks.splice(project.tasks.indexOf(task), 1);
+    save(data);
 }
 
 // Read from localStorage;
@@ -81,4 +117,4 @@ function save(data) {
     localStorage.setItem("data", JSON.stringify(data));
 }
 
-module.exports = {init};
+module.exports = {init, getProjectList, getTaskList, addTask, deleteTask};
