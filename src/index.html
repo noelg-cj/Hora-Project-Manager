@@ -47,98 +47,96 @@
           <div class="profile-container">
             <div class="profile">
               <div class="profile-pic" id="profile-img">
-                <!-- <img src="../assets/scrappy.png" alt=""> -->
               </div>
-<!--               <div class="user-details">
-                <div class="username">
-                  Noel George
-                </div>
-                <div class="gmail">
-                  noelgeorge2004@gmail.com
-                </div>
-            </div> -->
             </div>
           </div>
         </div>
       </nav>
 
-
       <main>
-        <div class="project-name">Project Manager</div>
-        <section class="project-options">
-          <ul class="options">
-            <li class="details">
-              <a href="" class="option-list">Details</a>
-            </li>
-            <li class="details">
-              <a href="" class="option-list active">Tasks</a>
-            </li>
-            <li class="details">
-              <a href="" class="option-list">Roadmaps</a>
-            </li>
-            <li class="details">
-              <a href="" class="option-list">Settings</a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="kanban-board">
-          <section class="sort-and-filter">
-            <div class="sort">
-              <p>Sort by:</p>
-              <button class="sort-options">
-                Deadline
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
-            <div class="filter">
-              <button class="filter-button">
-                <i class="fa-solid fa-arrow-down-short-wide"></i>
-                <p>Filter</p>
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-            </div>
+        <div class="project-list-container">
+          <div class="project-list">
+            <ul id="project-list">
+            </ul>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-name">Project Manager</div>
+          <section class="project-options">
+            <ul class="options">
+              <li class="details">
+                <a href="" class="option-list">Details</a>
+              </li>
+              <li class="details">
+                <a href="" class="option-list active">Tasks</a>
+              </li>
+              <li class="details">
+                <a href="" class="option-list">Roadmaps</a>
+              </li>
+              <li class="details">
+                <a href="" class="option-list">Settings</a>
+              </li>
+            </ul>
           </section>
-          <section class="kanban-container">
-            <section class="to-do" id="to-do">
-              <div class="title">
-                <div class="title-name">TO DO</div>
-                <div class="title-count">1</div>
+
+          <section class="kanban-board">
+            <section class="sort-and-filter">
+              <div class="sort">
+                <p>Sort by:</p>
+                <button class="sort-options">
+                  Deadline
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="add-task">
-                <button data-modal-target="#modal" class="add-task todo" id="todo-add">+ Add New Task</button>
+              <div class="filter">
+                <button class="filter-button">
+                  <i class="fa-solid fa-arrow-down-short-wide"></i>
+                  <p>Filter</p>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="task" id="task">
-                <div class="tag-container">
-                  <div id="tag">UI Design</div>
+            </section>
+            <section class="kanban-container">
+              <section class="to-do" id="to-do">
+                <div class="title">
+                  <div class="title-name">TO DO</div>
+                  <div class="title-count">1</div>
                 </div>
-                <div class="task-name">Finish creating UI for kanban board</div>
-                <div class="description">Add draggable feature to the board and give proper styling</div>
-                <div class="due-date">Due <span class="date">21/01/2023</span></div>
-              </div>
-            </section>
+                <div class="add-task">
+                  <button data-modal-target="#modal" class="add-task todo" id="todo-add">+ Add New Task</button>
+                </div>
+                <div class="task" id="task">
+                  <div class="tag-container">
+                    <div id="tag">UI Design</div>
+                  </div>
+                  <div class="task-name">Finish creating UI for kanban board</div>
+                  <div class="description">Add draggable feature to the board and give proper styling</div>
+                  <div class="due-date">Due <span class="date">21/01/2023</span></div>
+                </div>
+              </section>
 
-            <section class="in-progress" id="in-progress">
-              <div class="title">
-                <div class="title-name">IN PROGRESS</div>
-                <div class="title-count">0</div>
-              </div>
-              <div class="add-task">
-                <button data-modal-target="#modal" class="add-task progress" id="progress-add">+ Add New Task</button>
-              </div>
-            </section>
+              <section class="in-progress" id="in-progress">
+                <div class="title">
+                  <div class="title-name">IN PROGRESS</div>
+                  <div class="title-count">0</div>
+                </div>
+                <div class="add-task">
+                  <button data-modal-target="#modal" class="add-task progress" id="progress-add">+ Add New Task</button>
+                </div>
+              </section>
 
-            <section class="completed" id="completed">
-              <div class="title">
-                <div class="title-name">COMPLETED</div>
-                <div class="title-count">0</div>
-              </div>
-              <div class="add-task">
-                <button data-modal-target="#modal" class="add-task completed" id="completed-add">+ Add New Task</button>
-              </div>
+              <section class="completed" id="completed">
+                <div class="title">
+                  <div class="title-name">COMPLETED</div>
+                  <div class="title-count">0</div>
+                </div>
+                <div class="add-task">
+                  <button data-modal-target="#modal" class="add-task completed" id="completed-add">+ Add New Task</button>
+                </div>
+              </section>
             </section>
           </section>
-        </section>
+        </div>
       </main>
       <div class="form-container">
         <aside>

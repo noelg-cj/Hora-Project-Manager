@@ -2,8 +2,29 @@
 var Kanban = require("./API/KanbanAPI.js");
 Kanban.init();
 
+/* Sidebar options */
+const projectList = document.getElementById("project-list");
 
-/* Add task buttons */
+function listProjects() {
+    const projects = Kanban.getProjectList();
+
+    for (var i = 0; i < projects.length; i++) {
+        let listItem = document.createElement("li");
+        listItem.classList.add("project-list-item");
+        listItem.innerHTML = `
+                <i class="fa-solid fa-grip-vertical"></i>
+                <div class="project-item">
+                  <span class="project-list-item-color"></span>
+                  <span class="project-list-name">${projects[i]}</span>
+                </div>
+                <i class="fa-solid fa-chevron-down"></i>`
+        console.log(listItem);
+        projectList.appendChild(listItem);
+    }
+}
+listProjects();
+
+/* Kanban board */
 const addTask = document.querySelectorAll('[data-modal-target]');
 let taskFormContainer = document.querySelector('aside')
 let overlay = document.querySelector('.overlay');
