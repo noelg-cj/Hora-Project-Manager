@@ -42,7 +42,7 @@ const createWindow = () => {
   setTimeout(() => {
     splashWindow.close();
     mainWindow.show();
-  }, 0000);
+  }, 0);
 }
 
 // This method will be called when Electron has finished

@@ -2,6 +2,12 @@
 var Kanban = require("./API/KanbanAPI.js");
 Kanban.init();
 
+/* Things to do when app loads - change to load project later */
+window.addEventListener("load", () => {
+    listProjects();
+    displayTasks();
+})
+
 /* Sidebar options */
 const projectList = document.getElementById("project-list");
 
@@ -22,7 +28,6 @@ function listProjects() {
         projectList.appendChild(listItem);
     }
 }
-listProjects();
 
 /* Kanban board */
 const addTask = document.querySelectorAll('[data-modal-target]');
@@ -45,6 +50,28 @@ let completedCounter = 0;
 
 let activeTaskArea = todo;
 
+function displayTasks() {
+    tasks = Kanban.getTaskList(1);
+
+    tasks.forEach(task => {
+        console.log("hi");
+        if (task.status === 0) {
+            console.log("hi");
+            todo.appendChild(taskify(task.name, task.description, "20-04-2022"));
+
+        }
+
+        else if (task.status === 1) {
+            progress.appendChild(taskify(task.name, task.description, "20-04-2022"));
+        }
+
+        else {
+            completed.appendChild(taskify(task.name, task.description, "20-04-2022"));
+        }
+    })
+}
+
+/* Adding task section */
 addTask.forEach(taskButton => {
     taskButton.addEventListener("click", () => {
         taskFormContainer.classList.add('active');
@@ -70,8 +97,6 @@ addTask.forEach(taskButton => {
             completedCounter++;
             count = completedCounter;
         }
-
-        console.log(count, counter);
     })
 })
 
@@ -94,22 +119,14 @@ taskForm.addEventListener("submit", (e) => {
         return;
     }
 
-    let task = document.createElement("div");
-    task.classList.add("task");
-
-    let taskNameContainer = document.createElement("div");
-    taskNameContainer.classList.add("task-name");
-    taskNameContainer.innerText = taskName.value;
-
-    let taskDescrContainer = document.createElement("div");
-    taskDescrContainer.classList.add("description");
-    taskDescrContainer.innerText = taskDescr.value;
-
-    task.appendChild(taskNameContainer);
-    task.appendChild(taskDescrContainer);
+    let task = taskify(taskName.value, taskDescr.value, "24-12-2023");
 
     activeTaskArea.appendChild(task);
     counter.innerText = count;
+
+    const status = (activeTaskArea === todo) ? 0 : (activeTaskArea === progress) ? 1 : 2;
+
+    Kanban.addTask(1, status, taskName.value, taskDescr.value, "24-12-2023");
 
     /* Remove form after submitting */
     taskName.value = "";
@@ -117,4 +134,28 @@ taskForm.addEventListener("submit", (e) => {
     taskFormContainer.classList.remove('active');
     overlay.classList.remove('active');
 })
+
+function taskify (taskName, taskDescr, taskDate) {
+    console.log(taskName, taskDescr);
+    let task = document.createElement("div");
+    task.classList.add("task");
+
+    let taskNameContainer = document.createElement("div");
+    taskNameContainer.classList.add("task-name");
+    taskNameContainer.innerText = taskName;
+
+    let taskDescrContainer = document.createElement("div");
+    taskDescrContainer.classList.add("description");
+    taskDescrContainer.innerText = taskDescr;
+
+    let taskDateContainer = document.createElement("div");
+    taskDateContainer.classList.add("due-date");
+    taskDateContainer.innerHTML = `Due <span class="date">${taskDate}</span>`;
+
+    task.appendChild(taskNameContainer);
+    task.appendChild(taskDescrContainer);
+    task.appendChild(taskDateContainer)
+
+    return task;
+}
 

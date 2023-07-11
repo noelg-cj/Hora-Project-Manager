@@ -1,4 +1,4 @@
-const {readFile, writeFileSync} = require('fs');
+const {readFile, writeFile} = require('fs');
 
 /* export default class Kanban {
 
@@ -19,7 +19,7 @@ function init() {
     let content = "[]";
     readFile('data', 'utf-8', (err, result) => {
         if (err) {
-            writeFileSync('./data.json', '[]', (err) => {
+            writeFile('./data.json', '[]', (err) => {
                 console.log('Failed to create file');
                 return;
             })
@@ -56,7 +56,7 @@ function getTaskList(projectID) {
 function addTask(projectID, taskStatus, taskName, taskDescription, taskDate) {
     let data = read();
     const taskID = Math.floor(Math.random() * 100000);
-    const project = data.find(project => project = project.id);
+    const project = data.find(project => projectID === project.id);
 
     // Checking if id is already assigned to a task
     project.tasks.forEach(task => {
@@ -64,6 +64,8 @@ function addTask(projectID, taskStatus, taskName, taskDescription, taskDate) {
             taskID = Math.floor(Math.random() * 100000);
         }
     })
+
+    console.log(taskName, taskDescription, taskDate);
 
     const task = {
         id: taskID,
@@ -75,8 +77,7 @@ function addTask(projectID, taskStatus, taskName, taskDescription, taskDate) {
 
     project.tasks.push(task);
     save(data);
-    
-    return task;
+    commit();
 }
 
 function deleteTask(projectID, taskID) {
@@ -115,6 +116,16 @@ function read() {
 // Save data to localStorage
 function save(data) {
     localStorage.setItem("data", JSON.stringify(data));
+}
+
+function commit() {
+    console.log(JSON.stringify(read()));
+    writeFile('data', JSON.stringify(read()), (err) => {
+        if (err) {
+            throw err;
+            return;
+        }
+    });
 }
 
 module.exports = {init, getProjectList, getTaskList, addTask, deleteTask};

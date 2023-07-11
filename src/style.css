@@ -184,9 +184,19 @@ main {
     gap: 20px;
 }
 
+.project-list-item .fa-grip-vertical {
+    color: transparent;
+    width: 20px;
+}
+
+.project-list-item:hover .fa-grip-vertical {
+    color: var(--light-text);
+    cursor: grab;
+}
+
 .project-item {
     position: absolute;
-    left: 40px;
+    left: 30px;
     display: flex;
     gap: 10px;
     align-items: center;
